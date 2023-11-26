@@ -3,8 +3,18 @@
 /* ------------------------------- Styling voor opdracht 1 en 2  -------------------------------- */
 
 /* Schrijf hier jouw CSS... */
+#compliment-text::before {
+    content: "\0022";
+}
 
+#compliment-text::after {
+    content: "\0022";
 
+   
+   #copyright::after {
+       content: "\00a9"
+    }
+}
 body {
     color: white;
 }
@@ -38,6 +48,7 @@ h1 {
     padding: 32px;
 }
 
+
 .compliment {
     background-color: hsl(212, 43%, 65%);
     flex-basis: 200px;
@@ -48,6 +59,30 @@ h1 {
 .highlight {
     color: hsl(210, 93%, 19%);
     font-weight: 400;
+}
+
+span.highlight {
+    position: relative;
+    cursor: pointer;
+}
+
+span.highlight::before {
+    content: 'Dit is een latijns woord';
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    color: white;
+    padding:5px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+span.highlight:hover::before {
+    display: block;
+
 }
 
 footer {
